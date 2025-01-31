@@ -1,6 +1,4 @@
-
-while True:
-    chat = input('> ')
+def emoji_converter(chat):
     words = chat.split(' ')
     emojis = {
         ":)": "😊",
@@ -16,7 +14,13 @@ while True:
     output = ''
     for word in words:
         output += emojis.get(word, word) + ' '
-    print(output)
+    return output
+
+
+while True:
+    chat = input('> ')
+    print(emoji_converter(chat))
     decision = input('Quit? (Y/N): ').upper()
     if decision != 'N':
+        print('Terminating session...')
         break
